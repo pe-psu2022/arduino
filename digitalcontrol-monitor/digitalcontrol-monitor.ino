@@ -1,6 +1,6 @@
 #include <Wire.h> 
-#include <LiquidCrystal_I2C.h>                        //Downlaod it here: http://www.electronoobs.com/eng_arduino_liq_crystal.php
-LiquidCrystal_I2C lcd(0x27,20,4);                     //Soemtimes adres is 0x27 or 0x3f. Change it if it doesn't work
+//#include <LiquidCrystal_I2C.h>                        //Downlaod it here: http://www.electronoobs.com/eng_arduino_liq_crystal.php
+//LiquidCrystal_I2C lcd(0x27,20,4);                     //Soemtimes adres is 0x27 or 0x3f. Change it if it doesn't work
 
 
 //Inputs/outputs
@@ -43,8 +43,8 @@ float fmap(float x, float in_min, float in_max, float out_min, float out_max) {
 
 
 void setup() {
-  lcd.init();
-  lcd.backlight();    
+  //lcd.init();
+  //lcd.backlight();    
   pinMode(voltage_in,INPUT);
   pinMode(set_voltage_in,INPUT);
   pinMode(set_current_in,INPUT);
@@ -111,26 +111,26 @@ void loop() {
   
   //Each Delay value we print values on the LCD screen
   currentMillis = millis();
-  if(currentMillis - previousMillis >= Delay){  
-    previousMillis += Delay;
-    lcd.clear();
-    lcd.setCursor(0,0);
-    lcd.print(" VOLTAGE    CURRENT ");
+  //if(currentMillis - previousMillis >= Delay){  
+    //previousMillis += Delay;
+    //lcd.clear();
+    //lcd.setCursor(0,0);
+    //lcd.print(" VOLTAGE    CURRENT ");
 
-    lcd.setCursor(0,1);
-    lcd.print(set_voltage,1);
-    lcd.print("V       ");
+    //lcd.setCursor(0,1);
+    //lcd.print(set_voltage,1);
+    //lcd.print("V       ");
 
-    lcd.print(set_curr,0);
-    lcd.print("mA");
+    //lcd.print(set_curr,0);
+    //lcd.print("mA");
 
-    lcd.setCursor(0,3);
-    lcd.print(real_output2,1);
-    lcd.print("V       ");
+    //lcd.setCursor(0,3);
+    //lcd.print(real_output2,1);
+    //lcd.print("V       ");
 
-    lcd.print(real_current_ma,0);
+    //lcd.print(real_current_ma,0);
     //lcd.setCursor(19,1);
-    lcd.print("mA");  
-  }//end of currentMillis - previousMillis >= Delay
+    //lcd.print("mA");  
+  //}//end of currentMillis - previousMillis >= Delay
 
 }//end of void loop
